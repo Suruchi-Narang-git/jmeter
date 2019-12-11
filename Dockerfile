@@ -10,7 +10,7 @@ COPY dependency/jq /usr/local/bin
 WORKDIR /home
 RUN wget -q https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.1.1.tgz
 RUN tar -xvzf apache-jmeter-5.1.1.tgz
-ENV PATH $PATH:/home/apache-jmeter-5.1.1/bin
+export PATH=/home/apache-jmeter-5.1.1/bin:$PATH
 COPY dependency/cmdrunner-2.0.jar apache-jmeter-5.1.1/lib
 #RUN mkdir /home/cpi
 #COPY app.sh /home/cpi/
